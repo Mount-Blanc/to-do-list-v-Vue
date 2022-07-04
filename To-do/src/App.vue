@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue'
 
-const todos = ref( [])
+const todos = ref([])
 const name = ref('')
 
 const input_content =ref('')
@@ -11,6 +11,7 @@ const todos_asc = computed ( () => todos.value.sort((a,b) => {
   return b.createdAt - a.createdAt
 }))
 
+const addTodo = () => {}
 
 watch(name, (newVal) => {
   localStorage.setItem('name', newVal)
@@ -37,7 +38,15 @@ onMounted (() => {
       <h3>CREATE A TODO</h3>
     </section>
 
+    <form @submit.prevent="addTodo">
+    <h4>WHat's on your todo list?</h4>
+    <input
+    type="text"
+    placeholder="e.g. make a video"
+    v-model="input_content"/>
 
+    <h4>Pick a category</h4>
+    </form>
 </main>
 
 </template>
