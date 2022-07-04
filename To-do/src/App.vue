@@ -15,6 +15,18 @@ const todos_asc = computed ( () => todos.value.sort((a,b) => {
 
 <template>
   
+  <main class="app">
+
+    <section class="greeting">
+      <h2>
+        What's up, <input type="text" placeholder="Name Here"
+        v-model="name" />
+      </h2>
+    </section>
+
+
+</main>
+
 </template>
 
 <style>
