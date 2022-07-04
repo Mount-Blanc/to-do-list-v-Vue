@@ -46,6 +46,29 @@ onMounted (() => {
     v-model="input_content"/>
 
     <h4>Pick a category</h4>
+
+    <div class="options">
+
+      <label>
+        <input type="radio" 
+        name="category"
+        id="category1"
+        value='business'/>
+        <span class="bubble business"></span>
+        <div>Business</div>
+      </label>
+
+
+      <label>
+        <input type="radio" 
+        name="category"
+        id="category1"
+        value='personal'/>
+        <span class="bubble personal "></span>
+        <div>Personal</div>
+      </label>
+
+    </div>
     </form>
 </main>
 
