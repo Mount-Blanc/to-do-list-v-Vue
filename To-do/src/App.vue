@@ -69,6 +69,7 @@ onMounted (() => {
       </label>
 
     </div>
+    <input type="submit" value="Add todo"/>
     </form>
 </main>
 
