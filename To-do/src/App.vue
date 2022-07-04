@@ -11,7 +11,21 @@ const todos_asc = computed ( () => todos.value.sort((a,b) => {
   return b.createdAt - a.createdAt
 }))
 
-const addTodo = () => {}
+const addTodo = () => {
+  if ( input_content.value.trim() === '' || input_category.value === null) {
+    return
+  }
+
+  todos.value.push({
+    contentLinput_content.value,
+    category:input_category.value,
+    done:false,
+    createdAt: new Date().getTime()
+  })
+}
+watch(todos, newVal => {
+  localStorage.setItem('todos', JSON.stringify(newVal))
+}, { deep:true })
 
 watch(name, (newVal) => {
   localStorage.setItem('name', newVal)
@@ -39,7 +53,7 @@ onMounted (() => {
     </section>
 
     <form @submit.prevent="addTodo">
-    <h4>WHat's on your todo list?</h4>
+    <h4>What's on your todo list?</h4>
     <input
     type="text"
     placeholder="e.g. make a video"
