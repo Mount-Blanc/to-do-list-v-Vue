@@ -33,6 +33,10 @@ onMounted (() => {
       </h2>
     </section>
 
+    <section class="create-todo">
+      <h3>CREATE A TODO</h3>
+    </section>
+
 
 </main>
 
